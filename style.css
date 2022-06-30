@@ -1,62 +1,99 @@
-* {
+*{
   margin: 0;
   padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
+:root{
+  --trono-img: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-preto.png")
+}
 
-:root {
-  --label-icon: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/lua.png");
-  --throne-img: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-preto.png");
+body{
+  background: var(--bg-cor);
+  color: var(--fonte-cor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  user-select: none;
+  margin: 0;
+  transition: background 0.2s linear;
 }
 
 .dark-mode {
-  --bg-cor: black;
-  --fonte-cor: #ffffff;
-  --label-icon: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/sol.png");
-  --throne-img: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-branco.png");
+  --bg-cor: #292c35;
+  --fonte-cor: #fafafa;
+  --trono-img: url("https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-branco.png");
 }
 
-body {
-  background: var(--bg-cor);
-  color: var(--fonte-cor);
-  font-family: "Cinzel", serif;
+.title{
   font-size: 38px;
-  transition: background 2s;
-  user-select: none;
-  text-align: center;
+  margin-top: 200px;
 }
 
-.container {
-  height: 110vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.change-theme {
-  position: absolute;
-  top: 4%;
-  left: 4%;
-  background-image: var(--label-icon);
-  background-repeat: no-repeat;
-  padding: 67px;
-  cursor: pointer;
-}
-
-#btn {
-  display: none;
-}
-
-.throne {
-  background-image: var(--throne-img);
+.throne{
+  background-image: var(--trono-img);
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 200px;
-  width: 400px;
+  width: 450px;
   height: 350px;
+  margin-bottom: 30px;
+  position: relative;
+  top: 20vh;
+  right: 15%;
 }
 
+.buttonChange{
+  position: absolute;
+  bottom: 10rem;
+}
+
+.buttonChange p{
+  display: flex;
+  font-size: 26px;
+}
+
+.checkbox{
+  display: none;
+  position: absolute;
+}
+
+.label{
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 22px;
+  padding: 5px;
+  position: absolute;
+  height: 26px;
+  width: 55px;
+  transform: scale(1.5);
+}
+
+.label .ball{
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball{
+  transform: translateX(29px);
+}
+
+.fa-moon{
+  color: #f1c40f;
+}
+
+.fa-sun{
+  color: #f39c12;
+}

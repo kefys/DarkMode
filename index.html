@@ -9,18 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <title>Dark Mode</title>
 </head>
 
 <body>
-    <input id="btn" type="button">
-    <label for="btn" class="change-theme"></label>
-
-    <section class="container">
+    <div>
         <div class="throne"></div>
-        <p>The winter is coming</p>
-    </section>
+        <p class="title">The winter is coming</p>
+    </div>
 
+    <div class="buttonChange">
+        <p>Switch</p>
+        <input type="checkbox" name="" id="chk" class="checkbox">
+        <label class="label" for="chk">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
     <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
